@@ -33,6 +33,7 @@ print(f"Total chunks: {len(chunks)}")
 print("Creating embeddings...")
 embeddings = model.encode(chunks)
 #If you have 25 chunks → you get 25 vectors.
+#each vector has 384 dimensions
 # Convert to float32
 embeddings = embeddings.astype("float32")
 #FAISS requires embeddings in float32 format.
@@ -40,6 +41,11 @@ embeddings = embeddings.astype("float32")
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(embeddings)
+#Creates a FAISS index using:
+
+#IndexFlatL2 → uses L2 distance (Euclidean distance)
+
+#Finds nearest vectors based on similarity
 
 # Save index
 faiss.write_index(index, "vector.index")
