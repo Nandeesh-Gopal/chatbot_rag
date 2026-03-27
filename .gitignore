@@ -1,3 +1,23 @@
 .env
 chunks.pkl
 vector.index
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
